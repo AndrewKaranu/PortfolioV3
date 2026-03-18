@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// Tell Vercel this function needs up to 10s (max on Hobby plan)
+export const maxDuration = 10;
+
 // ─── Rate limiting ─────────────────────────────────────────────────────────────
 // Module-level map persists within a single serverless instance.
 // Good enough for a portfolio; see README/deployment notes for Upstash upgrade.
@@ -332,7 +335,7 @@ export async function POST(req: NextRequest) {
         max_tokens: 300,
         temperature: 0.7,
       }),
-      signal: AbortSignal.timeout(15_000), // 15s timeout
+      signal: AbortSignal.timeout(9_000), // 9s — keeps us under Vercel Hobby's 10s limit
     });
 
     if (!grokResponse.ok) {
