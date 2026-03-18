@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Andrew Kamami - Web Developer &amp; CS Student</title>
+<style type="text/css">
+  * { margin: 0; padding: 0; }
+  body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 13px;
+    background-color: #1a1a2e;
+    color: #cccccc;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' fill='%231a1a2e'/%3E%3Cpath d='M0 0 L40 40 M40 0 L0 40' stroke='%23222244' stroke-width='0.5'/%3E%3C/svg%3E");
+  }
+  #wrapper { width: 780px; margin: 0 auto; }
+  /* ── Header ── */
+  #header {
+    background: linear-gradient(to bottom, #0044aa, #001166);
+    border-bottom: 3px solid #ffaa00;
+    padding: 0;
+    text-align: center;
+  }
+  #header .inner { padding: 20px 30px; }
+  #header h1 { font-size: 32px; color: #ffffff; text-shadow: 2px 2px 4px #000; letter-spacing: 2px; font-family: Georgia, serif; }
+  #header p { color: #aaccff; font-size: 13px; margin-top: 6px; }
+  /* ── Nav ── */
+  #nav {
+    background: linear-gradient(to bottom, #003388, #002266);
+    border-bottom: 2px solid #ffaa00;
+    padding: 0;
+    text-align: center;
+  }
+  #nav a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-right: 1px solid #334499;
+  }
+  #nav a:first-child { border-left: 1px solid #334499; }
+  #nav a:hover { background: #ffaa00; color: #000; }
+  /* ── Layout ── */
+  #content-wrapper { display: table; width: 100%; }
+  #sidebar { display: table-cell; width: 200px; background: #111133; padding: 15px; vertical-align: top; border-right: 2px solid #334499; }
+  #main { display: table-cell; background: #0d0d22; padding: 20px; vertical-align: top; }
+  /* ── Sidebar ── */
+  .sidebar-box { background: #001155; border: 1px solid #334499; padding: 10px; margin-bottom: 12px; border-radius: 4px; }
+  .sidebar-box h3 { color: #ffaa00; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #334499; padding-bottom: 4px; margin-bottom: 8px; }
+  .sidebar-box a { display: block; color: #aaccff; text-decoration: none; font-size: 12px; padding: 2px 0; }
+  .sidebar-box a:hover { color: #ffaa00; }
+  .skill-bar-wrap { margin: 4px 0; }
+  .skill-bar-wrap span { font-size: 10px; color: #aaa; display: block; margin-bottom: 2px; }
+  .skill-bar { height: 8px; background: #334499; border-radius: 4px; overflow: hidden; }
+  .skill-bar div { height: 100%; background: linear-gradient(to right, #0077ff, #00aaff); border-radius: 4px; }
+  /* ── Main content ── */
+  .section { margin-bottom: 24px; }
+  .section h2 { font-size: 18px; color: #ffaa00; border-left: 4px solid #ffaa00; padding-left: 10px; margin-bottom: 12px; font-family: Georgia, serif; }
+  .section p { line-height: 1.7; color: #cccccc; margin-bottom: 10px; font-size: 13px; }
+  /* ── Profile box ── */
+  .profile-box { float: left; margin: 0 16px 12px 0; text-align: center; background: #001155; border: 2px solid #334499; padding: 10px; border-radius: 6px; }
+  .profile-box .avatar { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, #0044aa, #002266); border: 3px solid #ffaa00; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 6px; }
+  .profile-box p { font-size: 11px; color: #aaccff; margin: 0; }
+  /* ── Project table ── */
+  .project-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .project-table th { background: #001166; color: #ffaa00; padding: 6px 8px; text-align: left; border: 1px solid #334499; font-size: 11px; text-transform: uppercase; }
+  .project-table td { padding: 6px 8px; border: 1px solid #223366; vertical-align: top; }
+  .project-table tr:nth-child(even) { background: #0a0a1e; }
+  .project-table tr:hover { background: #001133; }
+  .project-table a { color: #6699ff; }
+  .badge { display: inline-block; background: #0044aa; color: #fff; font-size: 9px; padding: 1px 5px; border-radius: 3px; margin: 1px; }
+  .badge.ml { background: #006600; }
+  .badge.mobile { background: #660066; }
+  .badge.game { background: #664400; }
+  /* ── Contact ── */
+  .contact-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; }
+  .contact-item { background: #001155; border: 1px solid #334499; border-radius: 4px; padding: 10px 16px; text-align: center; min-width: 140px; }
+  .contact-item .icon { font-size: 24px; display: block; margin-bottom: 4px; }
+  .contact-item a { color: #aaccff; font-size: 11px; text-decoration: none; }
+  /* ── Footer ── */
+  #footer { background: #000011; border-top: 2px solid #ffaa00; padding: 10px; text-align: center; font-size: 11px; color: #556688; }
+  #footer a { color: #6699ff; }
+  .clearfix { clear: both; }
+  /* ── Marquee / 2008 vibes ── */
+  .webring { font-size: 10px; color: #556688; text-align: center; margin-top: 6px; border-top: 1px dashed #334499; padding-top: 6px; }
+</style>
+</head>
+<body>
+<div id="wrapper">
+
+  <!-- Header -->
+  <div id="header">
+    <div class="inner">
+      <h1>&#9733; Andrew Kamami &#9733;</h1>
+      <p>Computer Science Student &bull; Full-Stack Developer &bull; Montreal, Quebec, Canada</p>
+      <p style="font-size:11px; color:#8899bb; margin-top:4px;">
+        &quot;Building the future one line at a time.&quot; &mdash; Est. 2008
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div id="nav">
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="home.html">&#8962; Home</a>
+  </div>
+
+  <!-- Content -->
+  <div id="content-wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <div class="sidebar-box">
+        <h3>&#9670; Quick Info</h3>
+        <p style="font-size:11px; line-height:1.7; color:#aaccff;">
+          <strong style="color:#ffaa00;">Name:</strong> Andrew Kamami<br/>
+          <strong style="color:#ffaa00;">School:</strong> Concordia Univ.<br/>
+          <strong style="color:#ffaa00;">Location:</strong> Montreal, QC<br/>
+          <strong style="color:#ffaa00;">Email:</strong> andrewkaranu03<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@gmail.com<br/>
+          <strong style="color:#ffaa00;">Status:</strong> <span style="color:#00cc44;">&#9679; Available</span>
+        </p>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>&#9670; Top Skills</h3>
+        <div class="skill-bar-wrap"><span>Python</span><div class="skill-bar"><div style="width:92%"></div></div></div>
+        <div class="skill-bar-wrap"><span>JavaScript</span><div class="skill-bar"><div style="width:88%"></div></div></div>
+        <div class="skill-bar-wrap"><span>React</span><div class="skill-bar"><div style="width:85%"></div></div></div>
+        <div class="skill-bar-wrap"><span>Java</span><div class="skill-bar"><div style="width:78%"></div></div></div>
+        <div class="skill-bar-wrap"><span>C++</span><div class="skill-bar"><div style="width:72%"></div></div></div>
+        <div class="skill-bar-wrap"><span>AI / ML</span><div class="skill-bar"><div style="width:80%"></div></div></div>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>&#9670; Links</h3>
+        <a href="https://github.com/AndrewKaranu">&#128279; GitHub</a>
+        <a href="https://www.linkedin.com/in/andrew-karanu-998910237">&#128279; LinkedIn</a>
+        <a href="mailto:andrewkaranu03@gmail.com">&#9993; Email Me</a>
+      </div>
+
+      <div class="sidebar-box">
+        <h3>&#9670; Awards</h3>
+        <p style="font-size:11px; color:#aaccff; line-height:1.6;">
+          &#127942; 1st &mdash; McGill Hacks<br/>
+          &#127942; 1st &mdash; Databricks Prize<br/>
+          &#127881; Aga Khan Scholarship
+        </p>
+      </div>
+
+      <div class="webring">
+        Best viewed in IE 6.0 at 1024x768<br/>
+        &copy; 2008 Andrew Kamami<br/>
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" width="88" height="31" alt="IE" style="border:1px solid #334499; margin-top:4px;"/>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+
+      <!-- About -->
+      <a name="about"></a>
+      <div class="section">
+        <h2>About Me</h2>
+        <div class="profile-box">
+          <div class="avatar">&#128104;&#8205;&#128187;</div>
+          <p>Andrew Kamami</p>
+          <p style="color:#ffaa00; font-size:10px;">CS Student</p>
+        </div>
+        <p>Hi there! Welcome to my personal homepage. I'm <strong style="color:#ffaa00;">Andrew Kamami</strong>, a passionate Computer Science student at <strong style="color:#aaccff;">Concordia University</strong> in Montreal, Quebec.</p>
+        <p>I specialize in full-stack web development, machine learning, and building embedded systems. I love turning ideas into working software — from hackathon-winning platforms to AI-powered tools.</p>
+        <p>When I'm not coding, you can find me exploring the city, experimenting with new tech, or contributing to open-source projects. I'm always open to new collaborations and opportunities!</p>
+        <div class="clearfix"></div>
+      </div>
+
+      <!-- Projects -->
+      <a name="projects"></a>
+      <div class="section">
+        <h2>My Projects</h2>
+        <p>Here are some of the projects I've worked on. Click the links to view source code or live demos.</p>
+        <br/>
+        <table class="project-table">
+          <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Technologies</th>
+          </tr>
+          <tr>
+            <td><strong><a href="#">ModelForge</a></strong><br/><span style="color:#ffaa00; font-size:10px;">&#127942; 1st @ McGill Hacks</span></td>
+            <td>End-to-end MLOps platform for LLM fine-tuning with 2200+ models and a Model Arena for benchmarking adapters.</td>
+            <td><span class="badge ml">Python</span><span class="badge ml">PyTorch</span><span class="badge ml">Docker</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">StudyEngine</a></strong></td>
+            <td>Portable ESP32 study device with quiz/flashcard modes, AI content generation from PDFs, and voice processing.</td>
+            <td><span class="badge">C++</span><span class="badge">ESP32</span><span class="badge ml">Claude AI</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">ScamShield</a></strong></td>
+            <td>React Native app for scam recognition training with AI voice agents and fake phishing simulations.</td>
+            <td><span class="badge mobile">React Native</span><span class="badge mobile">Expo</span><span class="badge ml">xAI</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">Match A Wish</a></strong><br/><span style="color:#ffaa00; font-size:10px;">&#127942; Best Databricks Use</span></td>
+            <td>Full-stack app matching toy donors with hospitals using OpenAI embedding-powered matching algorithm.</td>
+            <td><span class="badge">React</span><span class="badge ml">OpenAI</span><span class="badge">Databricks</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">Touch Trust Bank</a></strong></td>
+            <td>Accessible banking app with facial authentication and voice commands for visually impaired users.</td>
+            <td><span class="badge">Java</span><span class="badge">JavaFX</span><span class="badge ml">OpenCV</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">AMMATower Defense</a></strong></td>
+            <td>Complete tower defense game built with Qt framework featuring custom map generation and pathfinding algorithms.</td>
+            <td><span class="badge game">C++</span><span class="badge game">Qt</span><span class="badge game">CMake</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">Byte Sized Tech News</a></strong></td>
+            <td>Automated tech newsletter with React frontend, Flask backend, and ML-powered article summarization.</td>
+            <td><span class="badge">React</span><span class="badge">Flask</span><span class="badge ml">NLP</span></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#">Melody MCP Server</a></strong></td>
+            <td>MCP server exposing 24 Spotify controls to LLMs with OAuth, AI playlist generation, and Last.fm integration.</td>
+            <td><span class="badge">Node.js</span><span class="badge ml">MCP</span><span class="badge">Spotify API</span></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Contact -->
+      <a name="contact"></a>
+      <div class="section">
+        <h2>Contact Me</h2>
+        <p>I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out through any of the channels below!</p>
+        <div class="contact-row">
+          <div class="contact-item">
+            <span class="icon">&#9993;</span>
+            <a href="mailto:andrewkaranu03@gmail.com">andrewkaranu03@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">&#128279;</span>
+            <a href="https://github.com/AndrewKaranu">GitHub</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">&#128188;</span>
+            <a href="https://www.linkedin.com/in/andrew-karanu-998910237">LinkedIn</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">&#127968;</span>
+            <span style="color:#aaccff; font-size:11px;">Montreal, QC<br/>Canada</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+  </div><!-- /content-wrapper -->
+
+  <!-- Footer -->
+  <div id="footer">
+    <p>&copy; 2008 Andrew Kamami &mdash; All Rights Reserved &mdash; <a href="home.html">&#8962; Back to Start</a></p>
+    <p style="margin-top:4px; color:#445566;">Powered by HTML &amp; CSS &bull; Hosted on GeoCities &bull; Validated XHTML 1.0</p>
+  </div>
+
+</div><!-- /wrapper -->
+</body>
+</html>

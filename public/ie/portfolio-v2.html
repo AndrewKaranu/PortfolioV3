@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Andrew Karanu — Portfolio V2</title>
+<style>
+  :root { --copper: #B87333; --bg: #0d0d0d; --card: rgba(25,25,25,0.85); --text: #ffffff; --muted: #cacaca; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    background-image: linear-gradient(-45deg, #4d4d4d, #000000, #ac621d, #3d4140);
+    background-size: 400% 400%;
+    animation: gradShift 12s ease infinite;
+    min-height: 100vh;
+  }
+  @keyframes gradShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(10,10,10,0.75);
+    border-bottom: 1px solid rgba(184,115,51,0.3);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 40px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo-img { width: 38px; height: 38px; border-radius: 50%; background: var(--copper); display: flex; align-items: center; justify-content: center; font-weight: bold; color: #000; font-size: 16px; }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--copper); }
+  /* ── Sections ── */
+  section { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 90px 40px 60px; }
+  .container { max-width: 960px; width: 100%; margin: 0 auto; }
+  .section-title { font-size: 28px; color: var(--copper); margin-bottom: 32px; position: relative; padding-bottom: 10px; }
+  .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background: var(--copper); }
+  /* ── Hero ── */
+  #home { text-align: center; flex-direction: column; }
+  .avatar-ring {
+    width: 150px; height: 150px; border-radius: 50%;
+    border: 2px solid var(--copper);
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, rgba(184,115,51,0.2), rgba(0,0,0,0.8));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+    animation: pulse 3s ease-in-out infinite;
+    position: relative;
+  }
+  .avatar-ring::after {
+    content: ''; position: absolute; inset: -8px; border-radius: 50%;
+    border: 1px solid rgba(184,115,51,0.4);
+    animation: pulse 3s ease-in-out infinite 0.5s;
+  }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.03); opacity: 0.9; } }
+  #home h1 { font-size: 36px; margin-bottom: 8px; }
+  #home h1 span { color: var(--copper); }
+  .typing-text { font-size: 18px; color: var(--copper); min-height: 28px; margin-bottom: 16px; }
+  #home p { color: var(--muted); max-width: 560px; margin: 0 auto 28px; line-height: 1.7; }
+  .btn { display: inline-block; padding: 10px 26px; border: 2px solid var(--copper); color: var(--copper); text-decoration: none; border-radius: 4px; font-size: 13px; transition: all 0.2s; margin: 0 6px; cursor: pointer; background: transparent; }
+  .btn:hover, .btn.primary { background: var(--copper); color: #000; }
+  .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 20px; }
+  .social-links a { color: var(--muted); text-decoration: none; font-size: 13px; display: flex; align-items: center; gap: 6px; }
+  .social-links a:hover { color: var(--copper); }
+  /* ── About ── */
+  .tabs { display: flex; gap: 0; margin-bottom: 20px; border-bottom: 1px solid rgba(184,115,51,0.3); }
+  .tab-btn { padding: 8px 20px; background: none; border: none; color: var(--muted); cursor: pointer; font-size: 13px; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; }
+  .tab-btn.active { color: var(--copper); border-bottom-color: var(--copper); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .about-card { background: var(--card); border: 1px solid rgba(184,115,51,0.2); border-radius: 8px; padding: 18px; backdrop-filter: blur(8px); }
+  .about-card h3 { color: var(--copper); font-size: 14px; margin-bottom: 8px; }
+  .about-card p { color: var(--muted); font-size: 12px; line-height: 1.6; }
+  .tech-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tech-pill { background: rgba(184,115,51,0.12); border: 1px solid rgba(184,115,51,0.3); color: var(--muted); padding: 5px 12px; border-radius: 20px; font-size: 12px; }
+  .edu-item { background: var(--card); border-left: 3px solid var(--copper); padding: 14px 18px; border-radius: 0 6px 6px 0; margin-bottom: 12px; backdrop-filter: blur(8px); }
+  .edu-item h3 { color: var(--text); font-size: 14px; }
+  .edu-item p { color: var(--muted); font-size: 12px; margin-top: 4px; line-height: 1.5; }
+  /* ── Projects ── */
+  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .project-card {
+    background: var(--card); border: 1px solid rgba(60,60,60,0.5);
+    border-radius: 10px; padding: 20px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .project-card:hover { transform: translateY(-3px); border-color: rgba(184,115,51,0.5); }
+  .project-card .cat { font-size: 10px; color: var(--copper); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .project-card h3 { font-size: 15px; margin-bottom: 6px; }
+  .project-card .award { font-size: 10px; color: #ffd700; margin-bottom: 6px; }
+  .project-card p { color: var(--muted); font-size: 12px; line-height: 1.6; margin-bottom: 10px; }
+  .tag { display: inline-block; font-size: 10px; background: rgba(184,115,51,0.15); color: var(--copper); padding: 2px 7px; border-radius: 3px; margin: 2px 2px 0 0; }
+  .project-links { margin-top: 10px; display: flex; gap: 10px; }
+  .project-links a { font-size: 11px; color: var(--copper); text-decoration: none; }
+  .project-links a:hover { text-decoration: underline; }
+  /* ── Contact ── */
+  #contact { text-align: center; }
+  .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 480px; margin: 0 auto; }
+  .contact-card { background: var(--card); border: 1px solid rgba(184,115,51,0.2); border-radius: 8px; padding: 18px; backdrop-filter: blur(8px); text-align: center; transition: border-color 0.2s; }
+  .contact-card:hover { border-color: var(--copper); }
+  .contact-card .icon { font-size: 26px; margin-bottom: 8px; }
+  .contact-card a { color: var(--muted); font-size: 12px; text-decoration: none; }
+  .contact-card a:hover { color: var(--copper); }
+  /* ── Footer ── */
+  footer { text-align: center; padding: 20px; background: rgba(10,10,10,0.7); border-top: 1px solid rgba(184,115,51,0.2); color: #556; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-img">AK</div>
+    <span style="font-size:14px; font-weight:600;">Andrew Karanu</span>
+  </div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div>
+    <div class="avatar-ring">👨‍💻</div>
+    <h1>Hello, I'm <span>Andrew Karanu</span></h1>
+    <div class="typing-text" id="typing"></div>
+    <p>Passionate developer with expertise in building modern web applications, data-driven solutions, and innovative software systems.</p>
+    <div>
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="mailto:andrewkaranu03@gmail.com" class="btn">Contact Me</a>
+    </div>
+    <div class="social-links">
+      <a href="https://github.com/AndrewKaranu" target="_blank">⬡ GitHub</a>
+      <a href="https://www.linkedin.com/in/andrew-karanu-998910237" target="_blank">⬡ LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p style="color:var(--muted); margin-bottom:24px; line-height:1.8;">
+      I'm Andrew Karanu, a Computer Science student at Concordia University and a passionate full-stack developer.
+      I love building projects that blend powerful backends with engaging user interfaces. From hackathon-winning platforms
+      to machine learning-driven automation tools, I thrive at the intersection of software development and real-world impact.
+    </p>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('skills',this)">Skills</button>
+      <button class="tab-btn" onclick="switchTab('tech',this)">Tech Stack</button>
+      <button class="tab-btn" onclick="switchTab('edu',this)">Education</button>
+    </div>
+    <div id="skills" class="tab-panel active">
+      <div class="about-grid">
+        <div class="about-card"><h3>🌐 Full-Stack Development</h3><p>Building scalable web and desktop applications using modern tech stacks including React, Node.js, Flask and more.</p></div>
+        <div class="about-card"><h3>📊 Data & Analysis</h3><p>Transforming and analyzing data to build smart, efficient ML systems and data pipelines.</p></div>
+        <div class="about-card"><h3>🤖 AI & Machine Learning</h3><p>Developing models and systems with OpenAI, AutoML, NLP, and embedding-based solutions.</p></div>
+      </div>
+    </div>
+    <div id="tech" class="tab-panel">
+      <div class="tech-grid">
+        <span class="tech-pill">Python</span><span class="tech-pill">JavaScript</span><span class="tech-pill">TypeScript</span>
+        <span class="tech-pill">Java</span><span class="tech-pill">C++</span><span class="tech-pill">React</span>
+        <span class="tech-pill">Node.js</span><span class="tech-pill">Svelte</span><span class="tech-pill">Flask</span>
+        <span class="tech-pill">MongoDB</span><span class="tech-pill">MySQL</span><span class="tech-pill">OpenCV</span>
+        <span class="tech-pill">Git</span><span class="tech-pill">Docker</span><span class="tech-pill">ESP32</span>
+        <span class="tech-pill">OpenAI</span><span class="tech-pill">Claude AI</span><span class="tech-pill">AWS</span>
+      </div>
+    </div>
+    <div id="edu" class="tab-panel">
+      <div class="edu-item">
+        <h3>Concordia University — Montreal, QC</h3>
+        <p>Bachelor of Computer Science – Co-op Program (Expected May 2027)<br/>
+        Relevant Courses: Data Structures & Algorithms, Data Analytics, Operating Systems, Advanced Program Design with C++<br/>
+        <span style="color:var(--copper);">🏆 Aga Khan Foundation Scholarship Recipient</span></p>
+      </div>
+      <div class="edu-item">
+        <h3>Concordia Co-op Program</h3>
+        <p>Member of Concordia's Institute for Co-operative Education.<br/>
+        Alternating between academic semesters and industry work terms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">My Projects</h2>
+    <p style="color:var(--muted); margin-bottom:24px;">Here's a selection of projects I've worked on.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="cat">AI / MLOps</div>
+        <h3>ModelForge</h3>
+        <div class="award">🏆 1st Place — McGill Hacks (Backboard.IO Challenge)</div>
+        <p>End-to-end MLOps platform for custom LLM fine-tuning with 2200+ models, Unsloth + QLORA optimization, and a containerized Model Arena for benchmarking adapters.</p>
+        <div><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Docker</span><span class="tag">Streamlit</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/ModelForge" target="_blank">GitHub →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">Embedded Systems</div>
+        <h3>StudyEngine</h3>
+        <p>Portable offline-capable ESP32 study device with quiz/flashcard modes, AI-powered content generation from PDFs, voice transcript processing, and a web admin interface.</p>
+        <div><span class="tag">C++</span><span class="tag">ESP32</span><span class="tag">Claude AI</span><span class="tag">FastAPI</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/StudyEngine" target="_blank">GitHub →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">Mobile Development</div>
+        <h3>ScamShield</h3>
+        <p>React Native app training users to recognize scams through realistic simulations of calls, texts, and emails with AI voice agents, scoring, and safe phishing practice.</p>
+        <div><span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">xAI Grok</span><span class="tag">ElevenLabs</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/ScamShield" target="_blank">GitHub →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">AI & LLM Tools</div>
+        <h3>Melody MCP Server</h3>
+        <p>MCP server exposing 24 Spotify controls to LLMs. Features OAuth authentication, AI playlist generation, music discovery via Last.fm, and playback control.</p>
+        <div><span class="tag">Node.js</span><span class="tag">MCP</span><span class="tag">Spotify API</span><span class="tag">OpenAI</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/Melody-MCP-Server" target="_blank">GitHub →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">Full-Stack</div>
+        <h3>Match A Wish</h3>
+        <div class="award">🏆 1st Place — Best Use of Databricks</div>
+        <p>Full-stack app matching toy donors with hospitals using OpenAI embedding-powered matching algorithm. Auth0, Databricks SQL backend.</p>
+        <div><span class="tag">React</span><span class="tag">OpenAI</span><span class="tag">Databricks</span><span class="tag">Auth0</span></div>
+        <div class="project-links"><a href="https://devpost.com/software/match-a-wish" target="_blank">Devpost →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">Software / Accessibility</div>
+        <h3>Touch Trust Bank</h3>
+        <p>Accessible banking app with facial authentication and voice commands built for visually impaired users, with a JavaFX interface and RAG system using Gemini.</p>
+        <div><span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">OpenCV</span><span class="tag">Gemini</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/Touch-Trust-Bank" target="_blank">GitHub →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">Game Development</div>
+        <h3>AMMATower Defense</h3>
+        <p>Complete tower defense game with fully interactive GUI using Qt framework, real-time player interaction, and custom map generation with pathfinding algorithms.</p>
+        <div><span class="tag">C++</span><span class="tag">Qt</span><span class="tag">CMake</span><span class="tag">Pathfinding</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/Tower-Defense-Game-Comp-345" target="_blank">GitHub →</a></div>
+      </div>
+      <div class="project-card">
+        <div class="cat">Data & ML</div>
+        <h3>Byte Sized Tech News</h3>
+        <p>Automated tech mailing list with React sign-up frontend and Flask backend. Scrapes and summarizes articles using ML and NLP with Gemini. Now a portfolio app.</p>
+        <div><span class="tag">React</span><span class="tag">Flask</span><span class="tag">AWS SES</span><span class="tag">NLP</span></div>
+        <div class="project-links"><a href="https://github.com/AndrewKaranu/Byte-Size-Tech-News" target="_blank">GitHub →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container" style="text-align:center;">
+    <h2 class="section-title" style="display:inline-block;">Get In Touch</h2>
+    <p style="color:var(--muted); max-width:500px; margin:0 auto 28px; line-height:1.8;">
+      I'm always open to new opportunities and collaborations. Feel free to reach out through any of the following channels:
+    </p>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="icon">✉️</div><a href="mailto:andrewkaranu03@gmail.com">andrewkaranu03@gmail.com</a></div>
+      <div class="contact-card"><div class="icon">🐙</div><a href="https://github.com/AndrewKaranu" target="_blank">github.com/AndrewKaranu</a></div>
+      <div class="contact-card"><div class="icon">💼</div><a href="https://www.linkedin.com/in/andrew-karanu-998910237" target="_blank">LinkedIn Profile</a></div>
+      <div class="contact-card"><div class="icon">📍</div><span style="color:var(--muted); font-size:12px;">Montreal, Quebec<br/>Canada</span></div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="mailto:andrewkaranu03@gmail.com" class="btn primary">Send Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Andrew Karanu. All rights reserved. &nbsp;|&nbsp; <a href="home.html" style="color:var(--copper);">← Back to Start</a></p>
+</footer>
+
+<script>
+  // Tab switching
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Simple typing animation
+  const roles = ['ML & AI Enthusiast', 'Full-Stack Developer', 'Python Developer', 'Web Developer', 'Full Stack Engineer'];
+  let ri = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typing');
+  function type() {
+    const current = roles[ri];
+    if (!deleting) {
+      el.textContent = current.slice(0, ++ci);
+      if (ci === current.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = current.slice(0, --ci);
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+    }
+    setTimeout(type, deleting ? 50 : 90);
+  }
+  type();
+</script>
+</body>
+</html>

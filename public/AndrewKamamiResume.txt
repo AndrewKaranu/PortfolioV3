@@ -1,0 +1,48 @@
+Andrew Kamami [cite: 1]
+Montreal, QC | 438-465-3939 | andrewkaranu03@gmail.com | linkedin.com/in/andrew-karanu | github.com/Andrew Karanu [cite: 2]
+
+EDUCATION [cite: 3]
+Concordia University | Montreal, QC [cite: 4, 6]
+Bachelor of Computer Science | May 2027 (Expected) [cite: 5, 7]
+- Relevant Coursework: Machine Learning, Data Structures and Algorithms, Data Analytics, FRANC 211 French as a Second Language, Embedded Systems, Operating Systems, Advanced Program Design with C++ [cite: 8]
+
+PROJECTS [cite: 9]
+ModelForge | Python, PyTorch, Unsloth, Docker, Streamlit (1st Place Backboard IO McGill Hacks challenge) [cite: 10]
+- Architected an end-to-end MLOps platform for custom LLM finetuning, implementing synthetic data generation pipelines by orchestrating 2200+ models via the Backboard.io SDK. [cite: 11]
+- Engineered a hardware-efficient fine-tuning system using Unsloth and QLORA (4-bit quantization), enabling the training of open source models on consumer GPUs by drastically reducing VRAM overhead. [cite: 12]
+- Developed a containerized execution engine using Docker to dynamically generate and run isolated training scripts, featuring a "Model Arena" that benchmarks fine-tuned adapters against base models with 2x optimized inference speed. [cite: 13]
+
+Byte Sized Tech News | Python, Flask, React, NLP, AWS SES [cite: 14]
+- Developed an automated tech newsletter platform serving 500+ users, featuring a React frontend for frictionless sign-ups and a Flask backend for subscription management. [cite: 15]
+- Engineered an intelligent content pipeline using Selenium to scrape daily articles, integrating a custom ML model for classification and NLP for summarization and ranking. [cite: 16]
+- Deployed a distributed architecture hosting the frontend on Vercel and backend cron jobs on Render, utilizing AWS SES to ensure high deliverability of the daily newsletter. [cite: 17]
+
+Job Salary Prediction (Class Project) | Python, Pandas, Scikit-learn, AutoML, Ollama [cite: 18]
+- Optimized predictive performance by leveraging AutoML to benchmark multiple regression algorithms (e.g., Random Forest, Gradient Boosting), achieving high accuracy in salary estimation. [cite: 19]
+- Synthesized high dimensional features from job descriptions using NLP techniques to capture non-numeric salary drivers like seniority, tech stack, and location. [cite: 20]
+- Built a hybrid dataset by merging synthetic records with real-time web-scraped data, utilizing a local LLAMA 8B model (via Ollama) to intelligently impute and augment missing values. [cite: 21]
+
+Touch Trust Bank | Java, JavaFX, OpenCV, Google Gemini, MySQL [cite: 22]
+- Developed a comprehensive desktop banking application using JavaFX and MySQL, implementing secure core logic for account management and real-time transaction processing. [cite: 23]
+- Engineered a multimodal accessibility layer combining OpenCV for facial recognition and Google TTS for audible feedback, enabling visually impaired users to navigate the system entirely hands-free. [cite: 24]
+- Architected a RAG pipeline that retrieves structured transaction history from MySQL to ground Gemini-powered responses, allowing users to query financial data via natural language. [cite: 25]
+
+EXPERIENCE & EXTRACURRICULARS [cite: 26]
+IEEE Lab Supervisor | Concordia University [cite: 27, 28]
+Aug 2025 - Present | Montreal, QC [cite: 29, 30]
+- Managed daily lab operations and safety protocols, ensuring a secure and productive environment for engineering projects and research activities. [cite: 31]
+
+Residential Assistant | Concordia University [cite: 32, 33]
+Aug 2024 - Dec 2025 | Montreal, QC [cite: 34, 35]
+- Collaborated with a team of 25 to foster a safe community for 1,000+ residents by managing conflict resolution, crisis response, and event programming. [cite: 36]
+
+AWARDS [cite: 37]
+- McGill Hacks: 2025 Best AI Project with Databricks Open Source, 2026 Winner Backboard.IO challenge, Conuhacks 2026 Winner SAP challenge [cite: 38]
+- Concordia Aga Khan Full Tuition Scholarship: Full tuition award valued at 120,000 (May 2023) [cite: 39, 41, 43]
+
+TECHNICAL SKILLS [cite: 40]
+- Languages: Python, C++, Java, TypeScript, JavaScript, SQL, C, HTML/CSS, PHP. [cite: 42]
+- AI & Machine Learning: PyTorch, LangChain, LangGraph, RAG (Retrieval-Augmented Generation), Unsloth (Fine-tuning), Hugging Face Transformers, Ollama, Major AI APIs, OpenCV, Scikit-learn, Pandas, NumPy, MCP Server Architecture, AutoML. [cite: 44]
+- Web, Mobile & Desktop: React, React Native, Electron, Node.js, Express, Flask, FastAPI, Streamlit, Expo, XState, BullMQ, Playwright, Selenium, Beautiful Soup, CMake, Qt, LVGL. [cite: 45]
+- Cloud, Database & DevOps: AWS (Lambda, S3, SES, Aurora), Docker, Redis, MongoDB, MySQL, Vercel, Render, Git/GitHub. [cite: 46]
+- Embedded & Systems: ESP32, Arduino, I2C/SPI Protocols, Linux/Unix Shell. [cite: 47]

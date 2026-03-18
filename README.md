@@ -1,3 +1,5 @@
+# Portfolio Win95
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -15,6 +17,34 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Test on Phone (ngrok)
+
+1. Create a free ngrok account and connect your machine once:
+
+```bash
+npx ngrok config add-authtoken <YOUR_NGROK_AUTHTOKEN>
+```
+
+1. Start the app:
+
+```bash
+npm run dev
+```
+
+1. In a second terminal, start the tunnel:
+
+```bash
+npm run tunnel
+```
+
+1. Open the generated `https://...ngrok-free.app` URL on your phone.
+
+Tip: If local networking is needed for other tools, run:
+
+```bash
+npm run dev:host
+```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

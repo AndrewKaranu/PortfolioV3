@@ -1,0 +1,16 @@
+# Normalize line endings to LF on checkout for all text files
+* text=auto eol=lf
+
+# Binary files — never touch
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.wasm binary
+*.mp3 binary
+*.mp4 binary
+*.pdf binary
+*.jsdos binary
+*.woff binary
+*.woff2 binary
